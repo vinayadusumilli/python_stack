@@ -1,0 +1,29 @@
+Let's analyze the time complexity of each method in your `Stack` class using `deque`:
+
+### 1. **Initialization (`__init__` method)**
+   - **Time Complexity**: \(O(1)\)
+   - **Reason**: Creating an empty `deque` with a fixed `maxlen` is an \(O(1)\) operation.
+
+### 2. **Adding an element (`add_element` method)**
+   - **Time Complexity**: \(O(1)\)
+   - **Reason**: The `deque.append()` operation is \(O(1)\) because it appends an element to the end of the deque.
+
+### 3. **Removing an element (`remove_element` method)**
+   - **Time Complexity**: \(O(1)\)
+   - **Reason**: The `deque.pop()` operation is \(O(1)\) because it removes an element from the end of the deque.
+
+### 4. **Displaying the stack (`display` method)**
+   - **Time Complexity**: \(O(n)\)
+   - **Reason**: Converting the `deque` to a list using `list(self.stack)` and printing it requires iterating over all \(n\) elements in the deque, where \(n\) is the number of elements currently in the stack.
+
+### Summary of Time Complexity
+| Method             | Time Complexity |
+|--------------------|------------------|
+| `__init__`         | \(O(1)\)         |
+| `add_element`      | \(O(1)\)         |
+| `remove_element`   | \(O(1)\)         |
+| `display`          | \(O(n)\)         |
+
+### Overall
+- Most operations (`add_element` and `remove_element`) are very efficient with \(O(1)\) time complexity, which makes your stack implementation optimal for typical stack operations.
+- The `display` operation is \(O(n)\) since it involves traversing the entire stack. This is expected because you need to access all elements to display them.
